@@ -21,7 +21,8 @@ public class OperationPromotion {
 		char v7=(char)(v6+1); //괄호를 꼭 서서 계산 먼저 되게 해준다. 
 		System.out.println("v7:" +v7);
 		
-
+ 
+		
 	}
 
 }
