@@ -11,9 +11,9 @@ public class WhileExample6 {
 		
 		while(run){
 			if(keyCode !=13 && keyCode !=10){
-				System.out.println("----------");
+				System.out.println("-------------");
 				System.out.println("1.예금 | 2.출금 | 3.종료");
-				System.out.println("----------");
+				System.out.println("-------------");
 				System.out.print("선택 : ");
 			}
 		
@@ -33,7 +33,8 @@ public class WhileExample6 {
 				System.out.println("프로그램 종료");
 				run=false;
 			}
-	}
+		
+		}
 
-}
+	}
 }
