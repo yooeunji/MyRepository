@@ -23,7 +23,7 @@ public class ArrayCreateByNew {
 			System.out.println("arr4["+i+"]="+arr4[i]);
 		}
 		
-		System.out.println(arr4[0].equals(arr4[1]));
+		System.out.println(arr4[0].equals(arr4[1])); //다른 객체를 찾조해도 문자열이 같다면 참
 		/*
 		double[] arr2=new double[5];
 		for(int i=0; i<arr2.length; i++){
