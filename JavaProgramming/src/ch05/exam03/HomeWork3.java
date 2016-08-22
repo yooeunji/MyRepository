@@ -6,21 +6,21 @@ public class HomeWork3 {
 
 	public static void main(String[] args) throws Exception{
 		
-		 views = 0;
+		int views = 0;
 		Scanner scanner = new Scanner(System.in);
 		
 		String[][] news= new String[100][] ;
 		
 		while(true){
 			System.out.println("--------------------------------------");
-			System.out.println("1.¸ñ·Ï | 2.±Û¾²±â | 3.»ó¼¼º¸±â | 4.¼öÁ¤ÇÏ±â | 5.»èÁ¦ÇÏ±â | 6.Á¾·á");
+			System.out.println("1.ëª©ë¡ | 2.ê¸€ì“°ê¸° | 3.ìƒì„¸ë³´ê¸° | 4.ìˆ˜ì •í•˜ê¸° | 5.ì‚­ì œí•˜ê¸° | 6.ì¢…ë£Œ");
 			System.out.println("--------------------------------------");
-			System.out.println("¼±ÅÃ ");
+			System.out.println("ì„ íƒ ");
 			String choice=scanner.nextLine();
 			
 			if(choice.equals("1")){
 				System.out.println("**************************************");
-				System.out.println("¹øÈ£\t\t" + "Á¦¸ñ\t\t"+"±Û¾´ÀÌ\t\t"+"Á¶È¸¼ö");
+				System.out.println("ë²ˆí˜¸\t\t" + "ì œëª©\t\t"+"ê¸€ì“´ì´\t\t"+"ì¡°íšŒìˆ˜");
 				System.out.println("**************************************");
 			
 				for(String[] newspaper: news){
@@ -32,17 +32,17 @@ public class HomeWork3 {
 			
 			else if(choice.equals("2")){
 				
-				System.out.print("Á¦¸ñÀ» ÀÔ·ÂÇÏ½Ã¿À.");
+				System.out.print("ì œëª©ì„ ì…ë ¥í•˜ì‹œì˜¤.");
 				String title= scanner.nextLine();
-				System.out.print("±Û¾´ÀÌ¸¦ ÀÔ·ÂÇÏ½Ã¿À.");
+				System.out.print("ê¸€ì“´ì´ë¥¼ ì…ë ¥í•˜ì‹œì˜¤.");
 				String name= scanner.nextLine();
-				System.out.print("³»¿ëÀ» ÀÔ·ÂÇÏ½Ã¿À.");
+				System.out.print("ë‚´ìš©ì„ ì…ë ¥í•˜ì‹œì˜¤.");
 				String context= scanner.nextLine();
 				
 		
 				for(int i=0; i<news.length; i++){
 					if(news[i]==null){
-						String[] newspaper={String.valueOf(i), title, name, views, context}; //¸Å°³°ª¼ıÀÚ¸¦ ¹®ÀÚ¿­·Î!
+						String[] newspaper={String.valueOf(i), title, name, views, context}; //ë§¤ê°œê°’ìˆ«ìë¥¼ ë¬¸ìì—´ë¡œ!
 						news[i]=newspaper;
 						break;
 					}		
@@ -51,19 +51,19 @@ public class HomeWork3 {
 			
 			
 			else if(choice.equals("3")){
-				System.out.print("»ó¼¼È÷ º¸°í½ÍÀº ±ÛÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.print("ìƒì„¸íˆ ë³´ê³ ì‹¶ì€ ê¸€ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 				int num=Integer.parseInt(scanner.nextLine());
-				System.out.println(num+"¹ø ±ÛÀÇ ³»¿ë : "+ news[num][4]);
+				System.out.println(num+"ë²ˆ ê¸€ì˜ ë‚´ìš© : "+ news[num][4]);
 				
 			}
 			
 			else if(choice.equals("4")){
 	
-				System.out.print("¼öÁ¤ÇÏ·Á´Â ±ÛÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä."); //Á¦¸ñ ³»¿ë¼öÁ¤
+				System.out.print("ìˆ˜ì •í•˜ë ¤ëŠ” ê¸€ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”."); //ì œëª© ë‚´ìš©ìˆ˜ì •
 				
 			}
 			else if(choice.equals("5")){
-				System.out.print("»èÁ¦ ÇÏ°í ½ÍÀº ±ÛÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.print("ì‚­ì œ í•˜ê³  ì‹¶ì€ ê¸€ì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 				int num=Integer.parseInt(scanner.nextLine());
 				news[num]=null;
 				
