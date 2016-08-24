@@ -1,4 +1,4 @@
-package ch05.exam03;
+package ch06.exam11;
 
 import java.util.Scanner; //자바가 스캐너를 제공
 
@@ -8,7 +8,7 @@ public class ScoreManagement {
 		
 		
 		Scanner scanner = new Scanner(System.in);
-		String[][] students=null; //생성은 하였으나 아직은 아무것도 참조하고있지 않다.
+		Student[] students=null; //생성은 하였으나 아직은 아무것도 참조하고있지 않다.
 		 
 				
 		while(true){
@@ -25,7 +25,7 @@ public class ScoreManagement {
 			if(choice.equals("1")){
 				System.out.print("총학생수 : ");
 				int totalNum=Integer.parseInt(scanner.nextLine());
-				students= new String[totalNum][];    
+				students= new Student[totalNum];    
 			}
 			
 			else if(choice.equals("2")){
@@ -33,9 +33,10 @@ public class ScoreManagement {
 				System.out.println("학번\t\t" + "이름\t\t"+"점수\t\t");
 				System.out.println("**************************************");
 			
-				for(String[] student: students){
+				for(int i=0; i<students.length; i++){
+					Student student=students[i];
 					if(student != null)
-						System.out.println(student[0]+"\t\t"+student[1]+"\t\t"+student[2]);				
+						System.out.println(student.no+"\t\t"+student.name+"\t\t"+student.score);				
 					}
 			}
 			
@@ -43,11 +44,11 @@ public class ScoreManagement {
 					System.out.print("학생이름 : ");
 					String name = scanner.nextLine();
 					System.out.print("점수 : ");
-					String score = scanner.nextLine();
+					int score = Integer.parseInt(scanner.nextLine());
 					
 					for(int i=0; i<students.length; i++){
 						if(students[i]==null){
-							String[] student={String.valueOf(i), name, score}; //매개값숫자를 문자열로!
+							Student student=new Student(i, name,score); //매개값숫자를 문자열로! 52,53열 students[i]=new Student(
 							students[i]=student;
 							break;
 						}		
@@ -64,17 +65,16 @@ public class ScoreManagement {
 			
 			else if(choice.equals("5")){
 				int max=0;
-				for(String[] student: students){
+				for(Student student: students){
 					if(student!=null){
-						if(max<Integer.parseInt(student[2])){
-							max=Integer.parseInt(student[2]);
-						}
+						if(max<student.score)
+							max=student.score;
 					}
 				}
-				for(String[] student: students){
-					if(student!=n ull){
-						if(max==Integer.parseInt(student[2])){
-						System.out.println("최고점수 학생"+student[0]+"("+student[1]+") :"+student[2]);
+				for(Student student: students){
+					if(student!=null){
+						if(max==student.score){
+						System.out.println("최고점수 학생 :("+student.name+"), 점수는 "+student.score);
 						}
 					}
 				}
@@ -85,11 +85,10 @@ public class ScoreManagement {
 				int sum=0;
 				int score=0;
 				
-				for(String[] student: students){	
+				for(Student student: students){	
 					if(student!=null){
-						score+=Integer.parseInt(student[2]);
+						score+=student.score;
 						sum++;
-				
 					}
 				}
 				System.out.println("평균 : "+(double)score/sum);
