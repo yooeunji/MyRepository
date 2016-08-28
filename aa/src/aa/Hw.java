@@ -4,9 +4,9 @@ import java.util.Scanner;  //자바가 스캐너를 제공
 
 public class Hw {    //클래스 Hw선언 
 
-	public static void main(String[] args) {  //메인 메소드 선언
+	public static void main(String[] args) throws Exception {  //메인 메소드 선언
 		
-		int[] views=new int[100];  //조회수를 저장하기위한 int형 크기 100짜리 배열 선언...String.valueOf()...
+		  //조회수를 저장하기위한 int형 크기 100짜리 배열 선언...String.valueOf()...
 		
 		Scanner scanner = new Scanner(System.in); //스캐너 타입의 변수 생성, 키보드로 입력받는값을 스캐너가 읽어들이겠다.
 				
@@ -41,7 +41,7 @@ public class Hw {    //클래스 Hw선언
 					
 					for(String[] newspaper: news){
 						if(newspaper != null) //값이 저장되어있는 배열의 값을 출력  
-							System.out.println(newspaper[0]+"\t\t"+newspaper[1]+"\t\t"+newspaper[2]+"\t\t"+views[Integer.parseInt(newspaper[0])]);				
+							System.out.println(newspaper[0]+"\t\t"+newspaper[1]+"\t\t"+newspaper[2]+"\t\t"+ newspaper[3]);				
 					}
 				}
 					
@@ -55,7 +55,7 @@ public class Hw {    //클래스 Hw선언
 						
 					for(int i=0; i<news.length; i++){
 						if(news[i]==null){
-							String[] newspaper={String.valueOf(i), title, name, context}; //매개값숫자를 문자열로바꿔서 index값을 게시글의 번호로 만들고, scanner로 입력받은값을 배열에 저장
+							String[] newspaper={String.valueOf(i), title, name, "0", context}; //매개값숫자를 문자열로바꿔서 index값을 게시글의 번호로 만들고, scanner로 입력받은값을 배열에 저장
 							news[i]=newspaper;
 							break;
 						}		
@@ -79,8 +79,9 @@ public class Hw {    //클래스 Hw선언
 					}
 					System.out.println("상세히 보고싶은 글의 번호를 입력하세요.");
 					int num=Integer.parseInt(scanner.nextLine()); 
-					System.out.println(num+"번 글의 내용 : "+ news[num][3]); //news배열의 네번째 배열에 상세히 보고자하는 내용이 담겨있으므로 출력 
-					views[num]++; //상세보기를 한 게시글의 조횟수를 1 증가 
+					System.out.println(num+"번 글의 내용 : "+ news[num][4]); //news배열의 네번째 배열에 상세히 보고자하는 내용이 담겨있으므로 출력 
+					int views=Integer.parseInt(news[num][3])+1;//상세보기를 한 게시글의 조횟수를 1 증가 
+					news[num][3]=String.valueOf(views);
 				}
 					
 				else if(choice.equals("4")){
@@ -114,8 +115,8 @@ public class Hw {    //클래스 Hw선언
 					}
 					if(select==2){
 						System.out.println("내용을 다시 입력 하세요.");  //수정할 글의 내용을 null값으로 만들고
-						news[num][3]=null; //수정할 글의 내용을 null값으로 만들고
-						news[num][3]= scanner.nextLine(); //다시입력
+						news[num][4]=null; //수정할 글의 내용을 null값으로 만들고
+						news[num][4]= scanner.nextLine(); //다시입력
 					}
 								
 				}
@@ -136,8 +137,7 @@ public class Hw {    //클래스 Hw선언
 					}
 					System.out.println("삭제 하고 싶은 글의 번호를 입력하세요.");
 					int num=Integer.parseInt(scanner.nextLine());
-					news[num]=null;
-					views[num]=0;
+					news[num]=null;					
 				}
 				
 				else if(choice.equals("6")){
