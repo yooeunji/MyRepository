@@ -44,7 +44,7 @@ public class Homework {
 				
 				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hit);
+						System.out.println(art.getNo() + "\t" + art.getTitle() + "\t" + art.getWriter() + "\t   " + art.getHit());
 				}
 				
 				System.out.println("***************************************");
@@ -95,7 +95,7 @@ public class Homework {
 				
 				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hit);
+						System.out.println(art.getNo() + "\t" + art.getTitle() + "\t" + art.getWriter() + "\t   " + art.getHit());
 				}
 				
 				System.out.println("***************************************");
@@ -131,15 +131,15 @@ public class Homework {
 						System.out.println("입력하신 번호에 해당하는 글이 없습니다. " );
 					} else {
 						// 조회수 1 증가
-						article[num].hit++;
+						article[num].setHit(article[num].getHit()+1);
 
 						// 번호, 제목, 글쓴이, 조회수, 내용 출력
-						System.out.println("번호 : " + article[num].no);
-						System.out.println("제목 : " + article[num].title);
-						System.out.println("글쓴이 : " + article[num].writer);
-						System.out.println("조회수 : " + article[num].hit);
+						System.out.println("번호 : " + article[num].getNo());
+						System.out.println("제목 : " + article[num].getTitle());
+						System.out.println("글쓴이 : " + article[num].getWriter());
+						System.out.println("조회수 : " + article[num].getHit());
 						System.out.println("내용 : ");
-						System.out.println(article[num].content + "\n");
+						System.out.println(article[num].getContent() + "\n");
 					}
 					
 					break;
@@ -172,7 +172,7 @@ public class Homework {
 				
 				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hit);
+						System.out.println(art.getNo() + "\t" + art.getTitle() + "\t" + art.getWriter() + "\t   " + art.getHit());
 				}
 				
 				System.out.println("***************************************");
@@ -213,15 +213,15 @@ public class Homework {
 							if ( modNum == 3 ) {
 								break;
 							} else if ( modNum == 1 ) {
-								System.out.println("현재 제목은 \"" + article[num].title + "\"입니다.");
+								System.out.println("현재 제목은 \"" + article[num].getTitle() + "\"입니다.");
 								System.out.print("수정할 제목을 입력 하세요 : ");
-								article[num].title = scanner.nextLine();
+								article[num].setTitle(scanner.nextLine());
 								System.out.println("수정되었습니다. ");
 								break;
 							} else if ( modNum == 2 ) {
-								System.out.println("현재 내용은 \"" + article[num].content + "\"입니다.");
+								System.out.println("현재 내용은 \"" + article[num].getContent() + "\"입니다.");
 								System.out.print("수정할 내용을 입력 하세요 : ");
-								article[num].content = scanner.nextLine();
+								article[num].setContent(scanner.nextLine());
 								System.out.println("수정되었습니다. ");
 								break;
 							} else {
@@ -261,7 +261,7 @@ public class Homework {
 				
 				for ( Article art : article ) {
 					if ( art != null )
-						System.out.println(art.no + "\t" + art.title + "\t" + art.writer + "\t   " + art.hit);
+						System.out.println(art.getNo() + "\t" + art.getTitle() + "\t" + art.getWriter() + "\t   " + art.getHit());
 				}
 				
 				System.out.println("***************************************");
