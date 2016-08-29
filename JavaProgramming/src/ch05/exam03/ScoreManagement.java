@@ -72,7 +72,7 @@ public class ScoreManagement {
 					}
 				}
 				for(String[] student: students){
-					if(student!=n ull){
+					if(student!=null){
 						if(max==Integer.parseInt(student[2])){
 						System.out.println("최고점수 학생"+student[0]+"("+student[1]+") :"+student[2]);
 						}
