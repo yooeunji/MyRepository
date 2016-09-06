@@ -9,7 +9,7 @@ public class ArraySortExample2 {
 		Arrays.sort(scores);
 		System.out.println(Arrays.toString(scores));
 		
-		Member3[] members={
+		Member3[] members={ //사용자 정의 클래스
 				new Member3("홍길동", 99),
 				new Member3("박동수", 97),
 				new Member3("김민수", 98)
@@ -25,7 +25,7 @@ class Member3 implements Comparable{
 	int score;
 	
 	Member3(String name, int score){
-		this.name=name;
+		this.name=name; 
 		this.score=score;
 	}
 	
@@ -33,7 +33,7 @@ class Member3 implements Comparable{
 	public int compareTo(Object o) {//비교할때쓰는 메소드 , 우리가쓰는건아니고..
 		System.out.println("compareTo");
 		Member3 target=(Member3) o;
-		return score-target.score;   //역순으로 홍길동을 먼저빼고싶을땐 return target.name.compareTo(target.name);
+		return target.score-score;   //역순으로 홍길동을 먼저빼고싶을땐 return target.name.compareTo(target.name);
 	}
 	@Override
 	public String toString() {
