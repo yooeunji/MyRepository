@@ -25,7 +25,7 @@ public class ThreadGroupExample2 {
             while ( true ) {
                System.out.println(getName() + " : 실행중....");
                if ( isInterrupted()) {
-                  break;
+                  break ;
                }
             }      
             System.out.println(getName() + " : 종료 ");
