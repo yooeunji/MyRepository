@@ -17,7 +17,7 @@ public class BeepPrintExample3 {
 					try{Thread.sleep(500);} catch(Exception e){}
 				}	
 			}
-		};
+		}; 
 		thread.setName("SoundThread");  //스레드 이름을 바꾸고싶으면 thread.start시작 전에 setName!
 		thread.start(); //main스레드가 아래를 실행할때 새로운 스레드가 run을 실행한다.
 		

@@ -13,6 +13,7 @@ public class MainThreadExample {
 		//공유 객체(같은 객체)를 각 스레드에게 주입
 		user1.setCalculator(calculator);
 		user2.setCalculator(calculator);
+		 
 		
 		user1.start();
 		user2.start();
