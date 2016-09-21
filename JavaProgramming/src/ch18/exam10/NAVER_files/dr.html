@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://nv1.veta.naver.com/dr?unit=002AN&tbsz=2&nrefreshx=0 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>NAVER</title>
+<link rel="stylesheet" type="text/css" href="./timeboard_v1.min.css">
+<style type="text/css">
+/* DA Alternative - Contents Style */
+#addiv{position:relative}
+#addiv embed,#addiv object{z-index:20}
+#addiv #da_alt{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+#addiv #da_alt.on{z-index:30}
+#addiv #da_alt a{display:block;overflow:hidden;position:absolute;bottom:0;left:0;width:100%;height:100%}
+#addiv #da_alt .guide{visibility:hidden;position:absolute;top:50%;left:50%;width:154px;height:58px;margin:-29px 0 0 -77px;background:url(http://img.naver.net/static/common/da/da_access.png)}
+#addiv #da_alt.on .guide{visibility:visible}
+#addiv #da_alt .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0}
+</style>
+<script type="text/javascript">
+
+document.domain = "naver.com";
+
+var autoplay;
+
+function lazyLoading() {
+	var sImageserver = "http://nv1.tveta.naver.net/libs";
+	
+	loadScript([
+		sImageserver + "/external/js/jquery-1.8.0.min.js?20160504",
+		sImageserver + "/external/js/CSSPlugin.min.js?20160504",
+		sImageserver + "/external/js/EasePack.min.js?20160504", 
+		sImageserver + "/external/js/TweenLite.min.js?20160504",
+		sImageserver + "/assets/js/min/it.min.js?20160811",
+		sImageserver + "/js/min/da.m.min.js?20160811"
+		], function() {
+			loadScript([sImageserver + "/js/videoPlayer/min/timeboard_autoplay.min.js?20160811"], initAd);
+		});
+	
+	function loadScript(urlArr, callback) {
+		var loadingCount = 0;
+		var resourceCnt = urlArr.length;
+
+		for(var i = resourceCnt - 1; i >= 0; i--){
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = urlArr[i];
+			if(script.readyState) { // IE
+				(function(script){
+					script.onreadystatechange = function() {
+						if(script.readyState == "loaded" || script.readyState == "complete") {
+							loadingCount++;
+							script.onreadystatechange = null;		
+							if(loadingCount === resourceCnt) callback();
+						}
+					};
+				})(script);
+			} else { // IE 외
+				(function(script){
+					script.onload = function() {
+						loadingCount++;
+						if(loadingCount === resourceCnt) callback();
+					};
+				})(script);
+			}
+			document.getElementsByTagName("head")[0].appendChild(script);
+		}
+    }
+}
+
+function initAd() {
+	var util = naver_corp_da.Util ? new naver_corp_da.Util() : new NBP_CORP.Nimp();
+	setTimeout(function() {
+		util.log("http://nv.veta.naver.com/dv?unit=002AN&ac=7211921&src=2952661&eid=V803&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D");
+	}, 0);
+
+	var info = {
+		flashPlayerSrc : "http://nv1.tveta.naver.net/libs/res/www/timeboard/autoplay/TimeboardAutoPlay_CS5_680x120.swf?20160504",
+		flashExpansionPlayerSrc : "http://nv1.tveta.naver.net/libs/res/www/timeboard/autoplay/TimeboardAutoPlay_CS5_940x410.swf?20160504",
+		cssSrc : "http://nv1.tveta.naver.net/libs/assets/css/min/timeboard_autoplay.min.css?20160623160300",
+		creativeData : {
+			bannerImgSrc : "http://nv1.tveta.naver.net/libs/1140/1140603/20160920163648-TTpIG2GG.jpg",
+			thumbVideoSrc : "http://damovie.dn.naver.com/ad3/1140/1140603/20160921121647-CASpDmEp.mp4",
+			expansionVideoSrc : "http://damovie.dn.naver.com/ad3/1140/1140603/20160920163826-i1fqpXMm.mp4",
+			expansionStillSrc : "http://nv1.tveta.naver.net/libs/1140/1140603/20160920163659-Lti7YUrZ.jpg",
+			altText : "닥터 스트레인지",
+			noSupportImgSrc : "http://nv1.tveta.naver.net/libs/1140/1140603/20160920163702-iwF9KOWH.jpg"
+		},
+		logData : {
+			bannerClick : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952661&br=2349501&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+			iconOverImp : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952661&br=2349500&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+			expansionImp : "http://nv.veta.naver.com/dr?unit=002AN&ac=7211921&src=2952662&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i",
+			expansionClick : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952662&br=2349506&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+			videoTracking : {
+				play : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952662&br=2349502&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+				pause : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952662&br=2349503&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+				soundOn : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952662&br=2349504&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+				soundOff : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952662&br=2349505&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D",
+				progressTracking : [
+					"http://nv.veta.naver.com/dr?unit=002AN&ac=7211921&src=2952663&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i",
+					"http://nv.veta.naver.com/dr?unit=002AN&ac=7211921&src=2952664&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i",
+					"http://nv.veta.naver.com/dr?unit=002AN&ac=7211921&src=2952665&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i",
+					"http://nv.veta.naver.com/dr?unit=002AN&ac=7211921&src=2952666&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i"
+				]
+			},
+			noSupportImp : "http://nv.veta.naver.com/dr?unit=002AN&ac=7211921&src=2952667&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i",
+			noSupportClick : "http://nv.veta.naver.com/dc?unit=002AN&ac=7211921&src=2952667&br=2349507&rk=V@IsdApizWsAAAFENfwAAAFw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D"
+		}
+	};
+	
+	autoplay = new TimeboardAutoPlay(info);
+	autoplay.initAd();
+}
+
+function expandAd() {
+	autoplay.expandAd();
+}
+
+function hideAd() {
+	autoplay.hideAd();
+}
+
+</script>
+<script type="text/javascript" src="./da.m.min.js.다운로드"></script><script type="text/javascript" src="./it.min.js.다운로드"></script><script type="text/javascript" src="./TweenLite.min.js.다운로드"></script><script type="text/javascript" src="./EasePack.min.js.다운로드"></script><script type="text/javascript" src="./CSSPlugin.min.js.다운로드"></script><script type="text/javascript" src="./jquery-1.8.0.min.js.다운로드"></script><script type="text/javascript" src="./timeboard_autoplay.min.js.다운로드"></script></head>
+<body onload="lazyLoading()" marginwidth="0" marginheight="0">
+<div id="da_timeboard">
+	<div class="content">
+		<div id="addiv" class="ad"></div>
+		<a id="link" name="link" href="javascript:void(0)"></a>
+	</div>
+</div>
+
+</body></html>

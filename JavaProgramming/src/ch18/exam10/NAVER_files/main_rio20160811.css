@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+a:hover{cursor:pointer}
+
+/* sprite */
+.ari_bg,.arb_bg02,.ad_rio_before .arb_dday,.ars_menu,.arnm_link_wrap,.arm_day,.arm_medal,.arnm_news:before,.rio_day_alert,.copy .s_rio:before,.arm_ico_arrow{background-image: url(http://img.naver.net/static/www/img/sp_rio2016_160810v2.png); background-repeat: no-repeat; display:block;}
+
+/* 뉴스캐스트 메뉴 텍스트 */
+.cast_link .rio_logo{letter-spacing:0; font-weight:bold; color:#4bc32b}
+.cast_link .rio_text_blue{color:#0ea3d6; padding-right:1px;}
+.cast_link .rio_logo:hover {color:#4bc32b}
+
+/* .ad_area2: 타임스퀘어 광고 배너 */
+.ad_area2 .ad_rio2016{position:absolute; top:0; left:0}
+.ad_area2 .ad_rio2016_btn_close{display:block; position:absolute; top:0; right:0; background:none; border:none; width:29px; height:29px;}
+
+/* .ad_area1: 가운데 광고 배너 */
+.ad_rio_middle{height:50px; background:url("http://img.naver.net/static/www/img/bg_rio2016.png") 0 0 repeat-x; position:relative;}
+.ari_bg{width:162px; height:50px; background-position: -5px -5px; position:absolute; top:0; left:0; z-index:1}
+.ad_rio_inner{display:block; position:absolute; top:0; right:0; width:768px; padding-left:172px; height:50px;}
+.ad_rio_inner::after{content:''; display:block; clear:both}
+.ad_rio_inner .ari_rborder{height:48px; position:absolute; top:2px; right:0; border-right: 1px solid #f0f0f0;}
+/*** .ad_rio_before: 개막전 배너 */
+.arb_bg02{content:''; width:778px; height:50px; background-position: -5px -63px; position:absolute; top:0; right:0;}
+.ad_rio_before .arb_dday{width:36px; height:19px; position:absolute; top:16px; left:172px}
+.ad_rio_before .arb_dday_5{background-position: -5px -344px;}
+.ad_rio_before .arb_dday_4{background-position: -5px -366px;}
+.ad_rio_before .arb_dday_3{background-position: -5px -388px;}
+.ad_rio_before .arb_dday_2{background-position: -5px -410px;}
+.ad_rio_before .arb_dday_1{background-position: -5px -432px;}
+/*** .ad_rio_start: 개막당일 배너 */
+.ars_menu{width:680px; height:16px; position:absolute; top:17px; left:172px; background-position: -5px -124px}
+.ars_menu::after{content:'';display:block;clear:both}
+.ars_menu [class*="ars_li"]{display:block; float:left; height:50px; margin:-17px 20px 0 10px}
+.ars_menu .ars_li01{width:110px; margin-left:0}
+.ars_menu .ars_li02{width:120px;}
+.ars_menu .ars_li03{width:160px;}
+.ars_menu .ars_li04{width:156px; margin-right:0}
+.ars_menu .ars_link{width:100%; height:50px; margin-top:-17px;}
+/*** .ad_rio_nomedal: 개막후, 매달없음 */
+.arnm_news::after{content:''; display:block; clear:both}
+.arnm_news::before{content:''; display:block; width: 1px; height: 13px; position:absolute; top:3px; left:240px; background-color: #d0d0d0}
+.arnm_news{width:487px; position:relative; top:16px}
+.arnm_nitem{width:230px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:15px; color:#32a4e4}
+.arnm_nitem01{float:left; position:relative}
+.arnm_nitem02{float:right}
+.arnm_nitem .arnm_nlink{font-weight:bold; font-size:12px; line-height:14px; letter-spacing:-1px; color:#32a4e4;}
+.arnm_link_wrap{width:133px; height:16px; float:right; margin-right:15px; background-position: -354px -5px;}
+.arnm_link_wrap .arnm_link{display:block; width:100%; height:100%;}
+/*** .ad_rio_medal: 개막후, 매달있음 */
+.arm_link_wrap{width:270px; height:50px; position:absolute; top:0; right:0}
+.arm_link{display:block; width:100%; height:100%}
+.arm_day{width:44px; height:14px; position:absolute; top:19px; right:148px; background-position:-849px -187px}
+.arm_day1{width:111px; background-position:-783px -187px;}
+.arm_day2{width:111px; background-position:-783px -202px;}
+.arm_day3{width:111px; background-position:-783px -217px;}
+.arm_day4{width:111px; background-position:-783px -232px;}
+.arm_day5{width:111px; background-position:-783px -247px;}
+.arm_day6{width:111px; background-position:-783px -262px;}
+.arm_day7{width:111px; background-position:-783px -277px;}
+.arm_day8{width:111px; background-position:-783px -292px;}
+.arm_day9{width:111px; background-position:-783px -307px;}
+.arm_day10{width:111px; background-position:-783px -322px;}
+.arm_day11{width:111px; background-position:-783px -337px;}
+.arm_day12{width:111px; background-position:-783px -352px;}
+.arm_day13{width:111px; background-position:-783px -367px;}
+.arm_day14{width:111px; background-position:-783px -382px;}
+.arm_day15{width:111px; background-position:-783px -397px;}
+.arm_day16{width:111px; background-position:-783px -412px;}
+.arm_day17{width:111px; background-position:-783px -427px;}
+.arm_day18{width:111px; background-position:-783px -442px;}
+.arm_day19{width:111px; background-position:-783px -457px;}
+.arm_day20{width:111px; background-position:-783px -472px;}
+.arm_day21{width:111px; background-position:-783px -487px;}
+.arm_day22{width:111px; background-position:-783px -502px;}
+.arm_day_end{width:111px; background-position:-783px -517px;}
+.arm_medal{width:104px; height:32px; background-position: -189px -5px; position:absolute; top:9px; right:35px;}
+.arm_medal [class*="arm_medal_"]{float:left; font-size:16px; line-height:18px; font-weight:bold; font-family:Arial,Dotum,'돋움',Helvetica,AppleSDGothicNeo,sans-serif; width:30px; height:15px; padding: 8px 0; text-align: center}
+.arm_medal [class*="arm_medal_"]:hover{text-decoration:none}
+.arm_medal .arm_medal_gold{color:#8d490b}
+.arm_medal .arm_medal_silver{color:#373636}
+.arm_medal .arm_medal_bronze{color:#7f3a00}
+.arm_medal .arm_medal_silver,.arm_medal .arm_medal_bronze{margin-left: 7px}
+.arm_ico_arrow{width:18px; height:32px; position:absolute; top:9px; right:11px; background-position:-301px -5px}
+/*** .ad_rio_end: 폐막 배너 */
+.are_text_wrap{height: 100%; width:498px; position:relative}
+.are_text_wrap .are_text_link{display:block; width:498px; height:30px; padding:10px 0}
+
+/**** themecast_rio2016.html *****/
+/* 1단형 */
+.tc_lst .rio_day_alert{width: 138px;background-position:-484px -802px;}
+.tc_lst .rio_day_start{background-position:-54px -187px;}
+.tc_lst .rio_day_1{background-position:-197px -187px;}
+.tc_lst .rio_day_2{background-position:-340px -187px;}
+.tc_lst .rio_day_3{background-position:-483px -187px;}
+.tc_lst .rio_day_4{background-position:-626px -187px;}
+.tc_lst .rio_day_5{background-position:-54px -340px;}
+.tc_lst .rio_day_6{background-position:-197px -340px;}
+.tc_lst .rio_day_7{background-position:-340px -340px; }
+.tc_lst .rio_day_8{background-position:-483px -340px;}
+.tc_lst .rio_day_9{background-position:-626px -340px;}
+.tc_lst .rio_day_10{background-position:-54px -493px;}
+.tc_lst .rio_day_11{background-position:-197px -493px;}
+.tc_lst .rio_day_12{background-position:-340px -493px;}
+.tc_lst .rio_day_13{background-position:-483px -493px;}
+.tc_lst .rio_day_14{background-position:-626px -493px;}
+.tc_lst .rio_day_15{background-position:-54px -649px;}
+.tc_lst .rio_day_16{background-position:-197px -649px;}
+.tc_lst .rio_day_17{background-position:-340px -649px;}
+.tc_lst .rio_day_18{background-position:-483px -649px;}
+.tc_lst .rio_day_19{background-position:-626px -649px;}
+.tc_lst .rio_day_20{background-position:-54px -802px;}
+.tc_lst .rio_day_21{background-position:-197px -802px;}
+.tc_lst .rio_day_22{background-position:-340px -802px;}
+/* 말머리 로고 */
+.tc_lst .rda_link{display:block; width:100%; height:100%}
+.tc_lst .copy .s_rio{position:relative;}
+.tc_lst .copy .s_rio{padding-left:33px; width:98px; padding-right:5px}
+.tc_lst .copy .s_rio:before{content:''; width:21px; height:10px; background-position:-18px -187px; position:absolute; top:7px; left:9px;}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://nv1.veta.naver.com/dr?unit=002AU&nrefreshx=0 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>NAVER</title>
+<style type="text/css">
+/* DA Alternative - Contents Style */
+#addiv{position:relative}
+#addiv embed,#addiv object{z-index:20}
+#addiv #da_alt{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
+#addiv #da_alt.on{z-index:30}
+#addiv #da_alt a{display:block;overflow:hidden;position:absolute;bottom:0;left:0;width:100%;height:100%}
+#addiv #da_alt .guide{visibility:hidden;position:absolute;top:50%;left:50%;width:154px;height:58px;margin:-29px 0 0 -77px;background:url(http://img.naver.net/static/common/da/da_access.png)}
+#addiv #da_alt.on .guide{visibility:visible}
+#addiv #da_alt .blind{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0}
+</style>
+<script type="text/javascript" src="./it.min.js(2).다운로드"></script><script type="text/javascript" src="./jquery-1.8.0.min.js(1).다운로드"></script></head><body onload="lazyLoading()" marginwidth="0" marginheight="0">
+<div id="addiv">
+	<a href="http://nv.veta.naver.com/dc?unit=002AU&amp;ac=7210238&amp;src=2951377&amp;br=2348536&amp;rk=V@IsdApizTcAAANxHXoAAANw&amp;eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&amp;:::cl:::" id="ac_banner_a" target="_blank">
+		<img src="./300_100_0919.jpg" width="300" height="100" title="" alt="오버워치 최고의 플레이 리그 시즌2" border="0">
+	<div id="da_access" style="position: absolute; top: 50%; left: 50%; width: 154px; height: 58px; margin: -29px 0px 0px -77px; background: url(&quot;http://img.naver.net/static/common/da/da_access.png&quot;); display: none;"></div></a>
+</div>
+<a id="link" name="link" href="javascript:void(0)"></a>
+<script type="text/javascript">
+document.domain = "naver.com";
+
+function lazyLoading() {
+	setTimeout(function() {
+		loadScript("http://adcreative.naver.com/ad3/assets/js/min/it.min.js?20160908", function(){
+			loadScript("http://adcreative.naver.com/ad3/external/js/jquery-1.8.0.min.js?20160908", initAd);
+		});
+
+		function loadScript(url, callback) {
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = url;
+			if(script.readyState) { // IE
+				(function(script){
+					script.onreadystatechange = function() {
+						if(script.readyState == "loaded" || script.readyState == "complete") {
+							script.onreadystatechange = null;	
+							callback();
+						}
+					};
+				})(script);
+			} else { // IE 외
+				(function(script){
+					script.onload = function() {
+						callback();
+					};
+				})(script);
+			}
+			document.getElementsByTagName("head")[0].appendChild(script);
+	    }
+	}, 50);
+}
+
+var uId = (window.frameElement != null) ? window.frameElement.id : "da_iframe_time2";
+var tarEl = null;
+
+function initAd() {
+	tarEl = $("#"+uId, parent.document);
+	$(parent.window).bind("scroll resize", checkViewPortHandler);
+
+	initAltForImage();
+}
+
+function checkViewPortHandler(){
+	checkViewPort(tarEl, callbackIn);
+
+	function callbackIn(){
+		var oNimp = new Nimp(["http://nv.veta.naver.com/dv?unit=002AU&ac=7210238&src=2951377&eid=V900&rk=V@IsdApizTcAAANxHXoAAANw&eltts=SumuCplQwVoErSqCGHQ7Pw%3D%3D&t=i"]);
+		oNimp.log(1);
+
+		$(parent.window).unbind("scroll resize", checkViewPortHandler);
+	}
+}
+
+function checkViewPort(elem, callbackIn){
+	var flagIn = beIntoViewPort(tarEl);
+	
+	if(flagIn) { // viewport 안에 있을 경우
+		callbackIn();
+	}
+}
+
+function beIntoViewPort(elem, ratio){
+	if(!elem) return false;
+
+	var ratio = (ratio) ? ratio : 1.0;
+	var eW = elem.width();
+	var eH = elem.height();
+
+	var viewportTop = $(parent.window).scrollTop();
+	var viewportBottom = $(parent.window).scrollTop() + $(parent.window).innerHeight();
+	var viewportLeft = $(parent.window).scrollLeft();
+	var viewportRight = $(parent.window).scrollLeft() + $(parent.window).innerWidth();
+
+	var f1 = (viewportTop <= (elem.offset().top + (eH*(1.0-ratio))) );
+	var f2 = (viewportBottom >= elem.offset().top + (eH*ratio));
+	var f3 = (viewportLeft <= elem.offset().left + (eW*(1.0-ratio)) );
+	var f4 = (viewportRight >= elem.offset().left + (eW*ratio));
+	
+	return (f1 && f2) && (f3 && f4);
+}
+
+function initAltForImage() {
+	// DA Alternative - Create Access Layer
+	var accessLayer = document.createElement('div');
+	accessLayer.setAttribute('id','da_access');
+	accessLayer.style.cssText = 'position:absolute;top:50%;left:50%;width:154px;height:58px;margin:-29px 0 0 -77px;background:url(http://img.naver.net/static/common/da/da_access.png)';
+	accessLayer.style.display = "none";
+	var oAdDiv = document.getElementById("ac_banner_a");
+	oAdDiv.appendChild(accessLayer);
+	
+	// DA Alternative - Focus Action
+	var altLink = document.getElementById("ac_banner_a");
+	var bMousedown = false;
+	altLink.onmousedown = function() {
+		bMousedown = true;
+	};
+	altLink.onfocus = function() {
+		if(!bMousedown){accessLayer.style.display = "block";}
+	};
+	altLink.onblur = function() {
+		accessLayer.style.display = "none";
+	};
+}
+</script>
+
+
+</body></html>
