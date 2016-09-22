@@ -14,7 +14,7 @@ public class ClientExample {
 		
 		//연결 요청하기
 		try {
-			SocketAddress sa=new InetSocketAddress("192.168.0.22", 5001);
+			SocketAddress sa=new InetSocketAddress("192.168.0.7", 5001);
 			socket.connect(sa);
 			System.out.println("[서버와 연결됨]");
 		} catch (IOException e) {

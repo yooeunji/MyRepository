@@ -13,7 +13,6 @@ import java.net.Socket;
 import java.net.SocketAddress;
 
 public class ServerExample {
-
 	public static void main(String[] args) {
 		
 		System.out.println("서버 연결");
@@ -21,8 +20,6 @@ public class ServerExample {
 		try{  //서버의 어떤 IP라도 접근할수있도록 한것
 			serverSocket=new ServerSocket(5001);  //5001번 포트번호
 			
-			
-	
 			for(int i=0; i<10; i++){
 			//클라이언트의 연결을 수락하고 통신용 Socket을 생성
 			Socket socket=serverSocket.accept(); 
@@ -38,7 +35,6 @@ public class ServerExample {
 			PrintStream ps=new PrintStream(os);
 			ps.println("[서버] " +data);
 			ps.flush();
-			
 		
 			//클라이언트의 연결을 끊음
 			socket.close(); 
@@ -46,13 +42,10 @@ public class ServerExample {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
-		
-		
 			try {
 				serverSocket.close();  //서버를 중지한다.
 			} catch (IOException e) {
 				System.out.println("서버 exit");
 			}
 	}
-
 }

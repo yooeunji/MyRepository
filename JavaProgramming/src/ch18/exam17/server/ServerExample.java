@@ -13,7 +13,7 @@ public class ServerExample {
 		
 		ServerSocket serverSocket=null;
 		try{  //서버의 어떤 IP라도 접근할수있도록 한것
-			serverSocket=new ServerSocket(5001);  //5001번 포트번호
+			serverSocket=new ServerSocket(5001);  //5001번의 포트번호를 가진 서버소켓 생성
 			
 			//서버의 특정 IP로 접근할수있도록 한것
 			/*serverSocket=new ServerSocket();
@@ -38,7 +38,6 @@ public class ServerExample {
 			try {
 				serverSocket.close();  //서버를 중지한다.
 			} catch (IOException e) {
-				e.printStackTrace();
 			}
 	}
 
