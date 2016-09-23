@@ -1,10 +1,8 @@
 package ch18.exam17.server;
 
 import java.io.IOException;
-import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketAddress;
 
 public class ServerExample {
 

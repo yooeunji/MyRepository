@@ -1,12 +1,8 @@
-package ch18.exam18.server;
+package ch18.exam19.server;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.PrintStream;
-import java.io.Reader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -24,15 +20,17 @@ public class ServerExample {
 			
 			//클라이언에서 보낸 데이터 받기
 			InputStream is=socket.getInputStream();
-			Reader reader=new InputStreamReader(is);
-			BufferedReader br=new BufferedReader(reader);
-			String data=br.readLine();
+			byte[] receiveValues=new byte[1024];
+			int byteNum=is.read(receiveValues);
+			String data=new String(receiveValues, 0, byteNum, "UTF-8");
+			System.out.println(data);
+			
 			
 			//클라이언트로 에코 보내기
 			OutputStream os=socket.getOutputStream();
-			PrintStream ps=new PrintStream(os);
-			ps.println("[서버] " +data);
-			ps.flush();
+			byte[] sendvalues=data.getBytes("UTF-8");
+			os.write(sendvalues);
+			os.flush();
 		
 			//클라이언트의 연결을 끊음
 			socket.close(); 

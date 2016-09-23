@@ -1,7 +1,6 @@
 package ch11.hw11; //11장 확인문제 13번
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class DataPrintExample {
 

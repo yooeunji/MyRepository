@@ -1,7 +1,5 @@
 package ch09.exam05;
 
-import ch09.exam04.A.B;
-
 public class A {
 
 	
