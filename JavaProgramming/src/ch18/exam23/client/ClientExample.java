@@ -26,7 +26,7 @@ public class ClientExample extends Application {
 			public void run() {
 				try{
 					socket=new Socket();
-					socket.connect(new InetSocketAddress("192.168.0.48", 5001));
+					socket.connect(new InetSocketAddress("192.168.0.7", 5001));
 					Platform.runLater(new Runnable(){
 						public void run(){
 							displayText("[연결완료 : "+socket.getRemoteSocketAddress()+"]");
