@@ -13,6 +13,7 @@
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/</url-pattern>            <!-- http://localhost:8080/myapp 이게 생략 -->
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+ 
 </web-app>

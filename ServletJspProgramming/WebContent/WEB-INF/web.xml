@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <!--서블릿 등록--> <!-- NowServlet이라는 서블릿이라는걸 등록해줘야한다 -->
+  <servlet>
+  	<servlet-name>now</servlet-name>         
+  	<servlet-class>servlet.NowServlet</servlet-class>
+  	<init-param>
+		<param-name>location</param-name>
+		<param-value>부산</param-value>
+	</init-param>
+  	<load-on-startup>1</load-on-startup> <!-- 웹애플리케이션이 WAS에 배치가 될때,톰캣이 시작할때, 객체를 불러온다-->
+  </servlet>
+    
+  <!-- 서블릿 URL매핑 -->
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/</url-pattern>     <!-- /이 뒤가 뭐든 다 실행한다. -->
+  </servlet-mapping>
+</web-app>
