@@ -1,9 +1,8 @@
-package com.mycompany.myapp.exam06;
+package com.mycompany.myapp2.exam06;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.omg.CORBA.portable.InputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -21,7 +19,8 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.myapp.exam06.Exam06Controller;
+import com.mycompany.myapp2.exam06.Exam06Controller;
+import com.mycompany.myapp2.exam06.Member;
 
 @Controller
 @RequestMapping("/exam06")
