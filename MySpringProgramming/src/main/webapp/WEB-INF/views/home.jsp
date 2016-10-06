@@ -15,6 +15,9 @@
     5.<a href="/myapp2/exam05/index">Exam05</a>요청 처리 메소드의 리턴타입<br/>
     6.<a href="/myapp2/exam06/index">Exam06</a>요청 처리 메소드의 매개변수 타입<br/>
     7.<a href="/myapp2/exam07/index">Exam07</a>컨트롤에서 JSP로 데이터 객체 전달<br/>
-    8.<a href="/myapp2/board/index">Board</a>게시판<br/>
+  	8.<a href="/myapp2/exam08/index">Exam08</a>리다이렉트<br/>
+	9.<a href="/myapp2/exam09/index">Exam09</a>의존성 주입<br/>
+
+    10.<a href="/myapp2/board/index">Board</a>게시판<br/>
 </body>
 </html>

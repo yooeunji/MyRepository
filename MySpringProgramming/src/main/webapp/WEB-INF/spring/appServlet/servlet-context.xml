@@ -23,6 +23,31 @@
 	
 	<context:component-scan base-package="com.mycompany.myapp2" />
 	
+	<!-- b를 관리 객체로 생성 -->
+	<beans:bean name="b" class="com.mycompany.myapp2.exam09.B"/>
+	<!-- a를 관리 객체로 생성 -->
+	<beans:bean name="aObj" class="com.mycompany.myapp2.exam09.A"/>
+	<beans:bean name="serviceA" class="com.mycompany.myapp2.exam09.ServiceA"/>
+	<beans:bean name="serviceB" class="com.mycompany.myapp2.exam09.ServiceB"/>
+	<beans:bean name="serviceCImpl2" class="com.mycompany.myapp2.exam09.ServiceCImpl2"/>
+	<beans:bean name="serviceDImpl1" class="com.mycompany.myapp2.exam09.ServiceDImpl1"/>
 	
+	
+	<!-- Exam09Controller 객체를 찾아서 가져오기 -->
+	<beans:bean name="exam09Controller" class="com.mycompany.myapp2.exam09.Exam09Controller">
+
+	<!-- Setter주입(property!!!!!!!!!!!!!)
+	<beans:property name="setter 이름" ref="매개값으로 전달할 객체(관리객체이름)"/>
+	 -->
+
+	<beans:property name="b" ref="b"/>
+	<beans:property name="a" ref="aObj"/>
+	<beans:property name="serviceA" ref="serviceA"/>
+	<beans:property name="serviceB" ref="serviceB"/>
+	<beans:property name="serviceC" ref="serviceCImpl2"/>
+	<beans:property name="serviceD" ref="serviceDImpl1"/>
+	
+	
+	</beans:bean>
 	
 </beans:beans>
