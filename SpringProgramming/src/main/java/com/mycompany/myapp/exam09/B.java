@@ -12,6 +12,6 @@ public class B {
 	}
 	
 	public void method(){
-		logger.info("B method 실행");
+		logger.info("method 실행");
 	}
 }
