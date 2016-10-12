@@ -1,4 +1,4 @@
-package com.mycompany.myapp.exam11.service;
+package com.mycompany.myapp2.exam11.service;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.mycompany.myapp.exam11.controller.Exam11Controller;
-import com.mycompany.myapp.exam11.dao.Exam11BoardDao;
-import com.mycompany.myapp.exam11.dto.Board;
+import com.mycompany.myapp2.exam11.controller.Exam11Controller;
+import com.mycompany.myapp2.exam11.dao.Exam11BoardDao;
+import com.mycompany.myapp2.exam11.dto.Board;
 
 @Component
 public class Exam11BoardService {

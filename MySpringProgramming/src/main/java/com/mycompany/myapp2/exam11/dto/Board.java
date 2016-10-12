@@ -1,4 +1,4 @@
-package com.mycompany.myapp.exam11.dto;
+package com.mycompany.myapp2.exam11.dto;
 
 
 public class Board {
