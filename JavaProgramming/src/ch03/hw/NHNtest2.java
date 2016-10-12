@@ -11,11 +11,9 @@ public class NHNtest2 {
 	        String[] words = null;
 	        int num;
 	        int num1=0;
-	        int[] sol;
-	 
-	        
 	
-	        
+	   
+	        int num2=0;
 	       
 	        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 	            String line = br.readLine();
@@ -39,10 +37,11 @@ public class NHNtest2 {
 	        		} //모음확인
 	        		
 	        		else{ //자음 확인
-	        			
+	        	
 	        		}
 	        	}
 	       }
 	        System.out.println(num1);
+	        System.out.println(num2);
 	}  
 }
