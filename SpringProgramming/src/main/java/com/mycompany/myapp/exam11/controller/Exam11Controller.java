@@ -28,6 +28,7 @@ public class Exam11Controller {//등록이름의 첫글자가 소문자로 바�
 	
 	@Autowired
 	private Exam11BoardService boardService;
+
 	
 	@RequestMapping("/index")
 	public String index(){
@@ -110,8 +111,36 @@ public class Exam11Controller {//등록이름의 첫글자가 소문자로 바�
 		List<Board> list=boardService.getList();
 		model.addAttribute("boardlist", list);
 		return "exam11/boardList";
-		
+	}
 	
+	@RequestMapping("/boardView")
+	public String boardView(int bno, Model model){
+		logger.info("boardView 처리");
+		Board board=boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardView";
+	}
+	
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.GET)
+	public String boardUpdateForm(int bno, Model model){
+		logger.info("boardView 처리");
+		Board board=boardService.getBoard(bno);
+		model.addAttribute("board", board);
+		return "exam11/boardUpdateForm";
+	}
+	
+	@RequestMapping(value="/boardUpdate", method=RequestMethod.POST)
+	public String boardUpdate(Board board){
+		logger.info("boardUpdate 처리");
+		boardService.updateBoard(board);
+		return "redirect:/exam11/boardList";
+	}
+	
+	@RequestMapping(value="/boardDelete")
+	public String boardDelete(int bno){
+		logger.info("boardDelete 처리");
+		boardService.deleteBoard(bno);
+		return "redirect:/exam11/boardList";
 	}
 	
 }
