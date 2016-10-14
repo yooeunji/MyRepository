@@ -17,12 +17,18 @@ public class NHNtest3 {
 	    }catch (IOException e) {
 	         e.printStackTrace();
 	    }
-	    
-	    
-	    
-	    
-	    
 	}
+
+
+	void rev_plus(int[] num){
+		int[] sum=new int[];
+		for(int i=0; i<num.length; i++){
+			sum[i]=num[i]+num[(num.length)-i];
+		
+		}
+		
+	}
+	
+	
+	
 }
-
-
