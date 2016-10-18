@@ -3,32 +3,39 @@ package ch03.hw;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class NHNtest3 {
 	public static void main(String[] args) {
-		int number = 0;
-	    try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-	        String line = br.readLine();
-	        int[] num=new int[line.length()];
-	        for(int i=0; i<line.length(); i++){
-	        	num[i]=Integer.parseInt(String.valueOf(line.charAt(i)));
-	        	System.out.print((num[i]));
-	        }
-	    }catch (IOException e) {
-	         e.printStackTrace();
-	    }
-	}
-
-
-	void rev_plus(int[] num){
-		int[] sum=new int[];
-		for(int i=0; i<num.length; i++){
-			sum[i]=num[i]+num[(num.length)-i];
-		
+		Scanner scanner=new Scanner(System.in);
+	      int sel=scanner.nextInt();
+	      
+	      int sum=0;
+	      int result=-1;
+	      int i;
+	      
+	      for(i=0; i<3; i++){
+	         sum=sel+reverse(sel);
+	         if(sum==reverse(sum)){
+	            System.out.println(sum);
+	            System.exit(0);
+	         }   
+	         sel=sum;
+	      }
+	      if(sel!=reverse(sel)){
+	         System.out.println(-1);
+	      }
+	   }
+	   
+	   static int reverse(int sel){
+	      int reverseNum=0;
+	      while( sel != 0 )
+	       {
+	           reverseNum = reverseNum * 10;
+	           reverseNum = reverseNum + sel%10;
+	           sel = sel/10;
+	       }
+	      return reverseNum;
+	   
 		}
-		
-	}
-	
-	
-	
 }

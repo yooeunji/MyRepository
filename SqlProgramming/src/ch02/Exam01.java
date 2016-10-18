@@ -26,6 +26,7 @@ public class Exam01 {
 			String ename=rs.getString("ename");
 			System.out.println(empno + ":" + ename);
 		}
+		
 		//JDBC관련 객체 닫기(메모리 리소스 해제)
 		rs.close();
 		pstmt.close();
