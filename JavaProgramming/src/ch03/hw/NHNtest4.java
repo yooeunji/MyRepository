@@ -16,10 +16,12 @@ public class NHNtest4 {
              for (String numStr : numStrList) {
                  numberList.add(Integer.parseInt(numStr));
              }
-         } catch (IOException e) {
+         }         
+         catch (IOException e) {
              e.printStackTrace();
          }
-         
+     
+     
          for(int i=0; i<numberList.size(); i++){
             numberList.get(i);
          }

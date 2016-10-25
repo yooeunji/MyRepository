@@ -3,13 +3,12 @@ package finalsource.dto;
 import java.util.Date;
 
 public class Member {
+	private String mid;
+	private String mname;
+	private String mpassword;
+	private int mage;
+	private Date mbirth;
 	
-	 private String mid;     
-	 private  String mname; 
-	 private int mage;
-	 private Date mbirth;
-	
-	 
 	public String getMid() {
 		return mid;
 	}
@@ -22,6 +21,12 @@ public class Member {
 	public void setMname(String mname) {
 		this.mname = mname;
 	}
+	public String getMpassword() {
+		return mpassword;
+	}
+	public void setMpassword(String mpassword) {
+		this.mpassword = mpassword;
+	}
 	public int getMage() {
 		return mage;
 	}
@@ -33,7 +38,6 @@ public class Member {
 	}
 	public void setMbirth(Date mbirth) {
 		this.mbirth = mbirth;
-	}
-	 
-	 
+	}	
+
 }
