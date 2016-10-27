@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import com.mycompany.myweb.dto.PhotoBoard;
 
 @Component
-public class PhoteBoardDao {
+public class PhotoBoardDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	

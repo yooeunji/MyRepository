@@ -36,9 +36,8 @@
 <ownerDesignName>table</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>4000</dataTypeSize>
-<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="bhitcount" id="E7464707-9FDD-09B5-5C4F-2BAE2D322ED6">
@@ -66,15 +65,14 @@
 <createdBy>Administrator</createdBy>
 <createdTime>2016-10-25 09:51:50 UTC</createdTime>
 <ownerDesignName>table</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="EA1EE856-BCCB-9678-2FAD-A574373E263A" referredColumn="FFF01373-B38F-0A97-84F4-01B31B08C408"/>
+<colAssociation fkAssociation="56C45036-EC00-3F17-EC22-02F432194E51" referredColumn="BF5CF368-524F-B877-AA5C-9E3E3BC8FDDB"/>
 </associations>
 </Column>
 </columns>
@@ -90,9 +88,9 @@
 <colUsage columnID="89D1344B-83AF-F3C9-A86B-AFBE54AF1B68"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="2FE03F70-784D-E320-9867-BA189719748E" name="freeboard_MEMBER_FK">
+<ind_PK_UK id="E5DF0BDA-FC19-8A14-F2A9-6EE600C3C25E" name="freeboard_member_FK">
 <createdBy>Administrator</createdBy>
-<createdTime>2016-10-25 09:51:56 UTC</createdTime>
+<createdTime>2016-10-26 03:30:41 UTC</createdTime>
 <ownerDesignName>table</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
