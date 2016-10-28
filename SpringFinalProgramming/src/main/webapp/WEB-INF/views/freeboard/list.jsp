@@ -18,7 +18,7 @@
 	<body> 
 		자유게시판
 		<hr/>
-		<table>
+		
 		<c:if test="${login!=null}">
 			<a href="write">[글쓰기]</a>
 		</c:if>
@@ -57,11 +57,11 @@
 			</c:if>
 			
 			<c:forEach var="i" begin="${startPageNo}" end="${endPageNo}">
-			&nbsp;
+
 				<a href="list?pageNo=${i}"
 				<c:if test="${pageNo==i}">
 				style="color:red"</c:if>>${i}</a>
-			&nbsp;
+		
 			</c:forEach>
 	
 			<c:if test="${groupNo<totalGroupNo}">
@@ -71,6 +71,6 @@
 		
 		
 		</div>		
-		</table>
+	
 	</body>
 </html>

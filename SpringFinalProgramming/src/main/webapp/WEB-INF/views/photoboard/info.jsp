@@ -10,45 +10,52 @@
 	글내용
 	<hr/>
 
-		<table>
+		<table style="width:570px">
+	
 		<tr>
 		<td style="background-color:orange; width:70px">번호</td>
-		<td>${freeboard.bno}</td>
+		<td>${photoboard.btitle}</td>
 		</tr>
-		
+	
 		<tr>
 		<td style="background-color:orange; width:70px">제목</td>
-		<td>${freeboard.btitle}</td>
+		<td>${photoboard.btitle}</td>
 		</tr>
 		
 		<tr>
 		<td style="background-color:orange; width:70px">내용</td>
-		<td><pre>${freeboard.bcontent}</pre></td>
+		<td><pre>${photoboard.bcontent}</pre></td>
 		</tr>
 		
 		<tr>
 		<td style="background-color:orange; width:70px">글쓴이</td>
-		<td>${freeboard.bwriter}</td>
+		<td><pre>${photoboard.bwriter}</pre></td>
 		</tr>
 		
 		<tr>
 		<td style="background-color:orange; width:70px">조회수</td>
-		<td>${freeboard.bhitcount}</td>
+		<td><pre>${photoboard.bhitcount}</pre></td>
 		</tr>
 		
 		<tr>
 		<td style="background-color:orange; width:70px">날짜</td>
-		<td>${freeboard.bdate}</td>
+		<td><pre>${photoboard.bdate}</pre></td>
 		</tr>
+		
+		<tr>
+		<td style="background-color:orange; width:70px">사진</td>
+		<td><img src="showPhoto?savedfile=${photoboard.savedfile}" width="500px"/></td>
+		</tr>
+		
 		</table>
 		
 		<div>
-		<c:if test="${login!=freeBoard.bwriter}">
-		<a href="modify?bno=${freeboard.bno}">[수정]</a>
-		<a href="remove?bno=${freeboard.bno}">[삭제]</a>
+		<c:if test="${login!=photoBoard.bwriter}">
+		<a href="modify?bno=${photoboard.bno}">[수정]</a>
+		<a href="remove?bno=${photoboard.bno}">[삭제]</a>
 		</c:if>
 		<a href="list">[목록]</a>
-		</div>
+		</div> 
 
 	</body>
 </html>

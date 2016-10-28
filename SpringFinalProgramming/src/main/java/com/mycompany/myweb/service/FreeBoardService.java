@@ -39,14 +39,15 @@ public class FreeBoardService {
 		}
 		return MODIFY_SUCCESS;	
 	}
+	
 	public int remove(int bno){
 		int row=freeBoardDao.delete(bno);
 		if(row==0){
 			return REMOVE_FAIL;
 		}
 		return REMOVE_SUCCESS;	
-		
 	}
+	
 	public FreeBoard info(int bno){
 		return freeBoardDao.selectByBno(bno);
 	}
