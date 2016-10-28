@@ -50,7 +50,7 @@
 		</table>
 		
 		<div>
-		<c:if test="${login!=photoBoard.bwriter}">
+		<c:if test="${login==photoBoard.bwriter}">
 		<a href="modify?bno=${photoboard.bno}">[수정]</a>
 		<a href="remove?bno=${photoboard.bno}">[삭제]</a>
 		</c:if>
