@@ -6,11 +6,11 @@
 		<meta charset="UTF-8">
 	</head>
 	<body> 
-	글쓰기
+	글수정
 	<hr/>
-	<form method="post">
+	<form method="post" enctype="multipart/form-data">
 		<input type="hidden" name="bno" value="${photoboard.bno}">
-		
+
 		<table>
 		<tr>
 		<td style="background-color:orange; width:70px">제목</td>
