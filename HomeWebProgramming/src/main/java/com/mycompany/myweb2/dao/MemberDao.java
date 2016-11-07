@@ -17,8 +17,7 @@ import com.mycompany.myweb2.dto.Member;
 public class MemberDao {
 	
 	@Autowired
-	private JdbcTemplate jdbcTemplate;  //servlet_context.xml에 명시함
-	
+	private JdbcTemplate jdbcTemplate;  
 	public int insert(Member member){
 		String sql="insert into member(mid, mname, mpassword, maddress, mtel, memail) values(?,?,?,?,?,?)";
 		int row=jdbcTemplate.update(
