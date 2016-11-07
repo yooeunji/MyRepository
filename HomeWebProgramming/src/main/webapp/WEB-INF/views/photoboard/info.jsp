@@ -47,6 +47,7 @@
 		<td><img src="showPhoto?savedfile=${photoboard.savedfile}" width="500px"/></td>
 		</tr>
 		
+		
 		</table>
 		
 		<div>
@@ -55,6 +56,7 @@
 		<a href="remove?bno=${photoboard.bno}">[삭제]</a>
 		</c:if>
 		<a href="list">[목록]</a>
+		[추천]
 		</div> 
 
 	</body>

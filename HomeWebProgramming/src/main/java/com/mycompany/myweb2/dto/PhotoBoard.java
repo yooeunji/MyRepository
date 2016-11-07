@@ -19,7 +19,14 @@ public class PhotoBoard {
 	private String originalfile;
 	private String savedfile;
 	private String mimetype;
+	private String recomm;
 	
+	public String getRecomm() {
+		return recomm;
+	}
+	public void setRecomm(String recomm) {
+		this.recomm = recomm;
+	}
 	public int getBno() {
 		return bno;
 	}

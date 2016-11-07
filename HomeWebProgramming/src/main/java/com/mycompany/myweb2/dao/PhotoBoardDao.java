@@ -112,4 +112,6 @@ public class PhotoBoardDao {
 		int count=jdbcTemplate.queryForObject(sql, Integer.class);   
 		return count;
 	}
+	
+	
 }
