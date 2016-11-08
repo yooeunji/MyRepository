@@ -56,7 +56,7 @@
 		<a href="remove?bno=${photoboard.bno}">[삭제]</a>
 		</c:if>
 		<a href="list">[목록]</a>
-		[추천]
+		<a href="[추천]
 		</div> 
 
 	</body>

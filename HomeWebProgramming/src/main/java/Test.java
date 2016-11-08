@@ -8,6 +8,7 @@ public class Test {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@106.253.56.123:1521:orcl", "kosauser13", "kosa12345");
 		String sql = "insert into photoboard(bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype) values(seq_photoboard_bno.nextval, ?, ?, ?, 0, sysdate,?,?,?)";
+		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		for(int i=1; i<=170; i++) {
 			pstmt.setString(1, "제목"+i);
@@ -17,7 +18,9 @@ public class Test {
 			pstmt.setString(5, "photo"+ (i%17+1) + ".jpg");
 			pstmt.setString(6, "image/jpeg");
 			pstmt.executeUpdate();
+			
 		}
+	
 		pstmt.close();
 		conn.close();
 	}

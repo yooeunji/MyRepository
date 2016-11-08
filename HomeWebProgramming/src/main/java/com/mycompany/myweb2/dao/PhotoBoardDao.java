@@ -20,7 +20,7 @@ public class PhotoBoardDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	public int insert(PhotoBoard photoBoard){
-		String sql="insert into photoboard(bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype) values(seq_photoboard_bno.nextval,?,?,?,0,sysdate,?,?,?)";
+		String sql="insert into photoboard(bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype, recomm ) values(seq_photoboard_bno.nextval,?,?,?,0,sysdate,?,?,?,0)";
 		int row=jdbcTemplate.update(
 			sql, 
 			photoBoard.getBtitle(),
@@ -35,7 +35,7 @@ public class PhotoBoardDao {
 	}
 	
 	public int update(PhotoBoard photoBoard){
-		String sql="update photoboard set btitle=?, bcontent=?, bhitcount=?, originalfile=?, savedfile=?, mimetype=? where bno=?";
+		String sql="update photoboard set btitle=?, bcontent=?, bhitcount=?, originalfile=?, savedfile=?, mimetype=?, recomm=? where bno=?";
 		int row=jdbcTemplate.update(
 				sql, 
 				photoBoard.getBtitle(),
@@ -44,6 +44,7 @@ public class PhotoBoardDao {
 				photoBoard.getOriginalfile(),
 				photoBoard.getSavedfile(),
 				photoBoard.getMimetype(),
+				photoBoard.getRecomm(),
 				photoBoard.getBno()
 			);
 		return row;
@@ -56,7 +57,7 @@ public class PhotoBoardDao {
 	}
 	
 	public PhotoBoard selectByBno(int bno){
-		String sql="select bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype from photoBoard where bno=?";
+		String sql="select bno, btitle, bcontent, bwriter, bhitcount, bdate, originalfile, savedfile, mimetype, recomm from photoBoard where bno=?";
 		List <PhotoBoard> list=jdbcTemplate.query(sql, new Object[]{bno}, new RowMapper<PhotoBoard>(){
 			@Override
 			public PhotoBoard mapRow(ResultSet rs, int row)throws SQLException{
@@ -70,6 +71,7 @@ public class PhotoBoardDao {
 				photoBoard.setOriginalfile(rs.getString("originalfile"));
 				photoBoard.setSavedfile(rs.getString("savedfile"));
 				photoBoard.setMimetype(rs.getString("mimetype"));
+				photoBoard.setRecomm(rs.getInt("recomm"));
 		
 				return photoBoard;
 			}
@@ -79,10 +81,10 @@ public class PhotoBoardDao {
 	
 	public List<PhotoBoard> selectByPage(int pageNo, int rowsPerPage){
 		String sql="";
-		sql+="select rn, bno, btitle, bhitcount, bdate, savedfile ";
+		sql+="select rn, bno, btitle, bhitcount, bdate, savedfile, recomm ";
 		sql+="from( " ;
-		sql+="select rownum as rn, bno, btitle, bhitcount, bdate, savedfile ";
-		sql+="from (select bno, btitle,  bhitcount, bdate, savedfile from PhotoBoard order by bno desc) ";
+		sql+="select rownum as rn, bno, btitle, bhitcount, bdate, savedfile, recomm ";
+		sql+="from (select bno, btitle,  bhitcount, bdate, savedfile, recomm from PhotoBoard order by bno desc) ";
 		sql+="where rownum<=? ";
 		sql+=") ";
 		sql+="where rn>=? ";
@@ -99,6 +101,8 @@ public class PhotoBoardDao {
 						photoBoard.setBhitcount(rs.getInt("bhitcount"));
 						photoBoard.setBdate(rs.getDate("bdate"));
 						photoBoard.setSavedfile(rs.getString("savedfile"));
+						photoBoard.setRecomm(rs.getInt("recomm"));
+						
 						return photoBoard;
 					}
 				}
@@ -112,6 +116,9 @@ public class PhotoBoardDao {
 		int count=jdbcTemplate.queryForObject(sql, Integer.class);   
 		return count;
 	}
+	
+	
+
 	
 	
 }

@@ -38,6 +38,7 @@
 					<div style="width:120px; height:130px; margin:5px; background-image:url(showPhoto?savedfile=${photoBoard.savedfile}); background-size:120px 130px; margin:5px; display: inline-block;">
 						<div style="height:100px;">
 						<span style="color:white; font-size:12px">${photoBoard.bdate}</span>
+						
 						</div>
 						<div>
 							<table style="width:100%; height:30px; background-color:black; opacity:0.5;">

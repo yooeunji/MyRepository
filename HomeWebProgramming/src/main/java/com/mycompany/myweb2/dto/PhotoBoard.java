@@ -19,12 +19,12 @@ public class PhotoBoard {
 	private String originalfile;
 	private String savedfile;
 	private String mimetype;
-	private String recomm;
+	private int recomm;
 	
-	public String getRecomm() {
+	public int getRecomm() {
 		return recomm;
 	}
-	public void setRecomm(String recomm) {
+	public void setRecomm(int recomm) {
 		this.recomm = recomm;
 	}
 	public int getBno() {
